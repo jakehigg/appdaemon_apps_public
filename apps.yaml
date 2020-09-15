@@ -1,0 +1,23 @@
+bedroom_room_control:
+  module: room_control
+  class: room_control
+  occupied: switch.bedroom_occupied
+  trigger_binary_sensor:
+    - binary_sensor.bedroom_1_motion
+    - binary_sensor.bedroom_door
+  scene_prefix: "scene.bedroom_"
+  stay_on_if_on: 
+    - binary_sensor.bedroom_tv_ping
+    - switch.bedroon_sleep
+  manual: switch.bedroom_manual
+  delay: 600
+  fan: fan.bedroom_fan
+  fan_on_threshold: input_number.bedroom_fan_on_threshold
+  fan_medium_threshold: input_number.bedroom_fan_medium_threshold
+  fan_high_threshold: input_number.bedroom_fan_high_threshold
+  temperature_sensor: sensor.bedroom_temperature
+  debug: True
+  mode: sensor.mode
+  sleep: switch.bedroom_sleep
+  wake_scene: scene.bedroom_wake
+  sleep_transition: 300
